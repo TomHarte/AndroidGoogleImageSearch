@@ -1,0 +1,95 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.thomasharte.googleimagesearch.AdvancedSearchSettingsDialogue"
+    android:paddingRight="10dp"
+    android:paddingLeft="10dp"
+    android:paddingBottom="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/image_size"
+        android:id="@+id/tvImageSize"
+        android:gravity="center_vertical"
+        android:paddingEnd="10dp"
+        android:paddingRight="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/spImageSizes"/>
+
+    <Spinner
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spImageSizes"
+        android:layout_toEndOf="@+id/tvImageSize"
+        android:layout_toRightOf="@+id/tvImageSize"
+        android:entries="@array/image_sizes"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/colour_filter"
+        android:id="@+id/tvColourFilter"
+        android:paddingRight="10dp"
+        android:layout_below="@+id/tvImageSize"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/spImageColours"
+        android:gravity="center_vertical"/>
+
+    <Spinner
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spImageColours"
+        android:layout_below="@+id/tvImageSize"
+        android:layout_toRightOf="@+id/tvColourFilter"
+        android:layout_toEndOf="@+id/tvColourFilter"
+        android:entries="@array/image_colours"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/image_type"
+        android:id="@+id/tvImageType"
+        android:paddingRight="10dp"
+        android:paddingEnd="10dp"
+        android:layout_below="@+id/tvColourFilter"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center_vertical"
+        android:layout_alignBottom="@+id/spImageTypes"/>
+
+    <Spinner
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spImageTypes"
+        android:layout_below="@+id/tvColourFilter"
+        android:layout_toRightOf="@+id/tvImageType"
+        android:layout_toEndOf="@+id/tvImageType"
+        android:entries="@array/image_types"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/site_filter"
+        android:id="@+id/tvSiteFilter"
+        android:paddingRight="10dp"
+        android:paddingEnd="10dp"
+        android:layout_below="@+id/tvImageType"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/etSiteFilter"
+        android:gravity="bottom"/>
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etSiteFilter"
+        android:layout_below="@+id/spImageTypes"
+        android:layout_toEndOf="@+id/tvSiteFilter"
+        android:layout_toRightOf="@+id/tvSiteFilter"/>
+
+</RelativeLayout>
