@@ -1,11 +1,14 @@
-package com.thomasharte.googleimagesearch;
+package com.thomasharte.googleimagesearch.controller;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
 import android.text.Html;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
+import com.thomasharte.googleimagesearch.model.ImageResult;
+import com.thomasharte.googleimagesearch.R;
 
 
 public class SingleImageActivity extends Activity {
@@ -20,11 +23,11 @@ public class SingleImageActivity extends Activity {
 
         // ... ask Picasso nicely to fetch the graphic...
         ImageView imgImage = (ImageView)findViewById(R.id.imgImage);
-        Picasso.with(this).load(image.getUrl()).into(imgImage);
-
-        // TODO: add resize
+        Picasso.with(this).load(image.getUrl()).fit().centerInside().into(imgImage);
 
         // ... and set the title
-        getActionBar().setTitle(Html.fromHtml(image.getTitle()));
+        ActionBar actionBar = getActionBar();
+        if(actionBar != null)
+            actionBar.setTitle(Html.fromHtml(image.getTitle()));
     }
 }

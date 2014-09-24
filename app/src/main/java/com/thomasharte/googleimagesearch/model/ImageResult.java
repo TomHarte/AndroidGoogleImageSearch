@@ -1,9 +1,8 @@
-package com.thomasharte.googleimagesearch;
+package com.thomasharte.googleimagesearch.model;
 
 import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
@@ -15,19 +14,15 @@ public class ImageResult implements Parcelable, Target {
     private String url, title, thumbnailUrl;
     private int thumbnailWidth, thumbnailHeight;
 
-    private ImageView intoImageView;
-    private Context context;
-
     public ImageResult(Context context, String url, String title, String thumbnailUrl, int thumbnailWidth, int thumbnailHeight) {
         this.url = url;
         this.title = title;
         this.thumbnailUrl = thumbnailUrl;
-        this.context = context;
         this.thumbnailWidth = thumbnailWidth;
         this.thumbnailHeight = thumbnailHeight;
 
-        // warm the cache
-        loadThumbnailInto(null);
+        // warm the network cache, at least
+        Picasso.with(context).load(thumbnailUrl).resize(1,1).into(this);
     }
 
     public String getUrl() {
@@ -46,15 +41,8 @@ public class ImageResult implements Parcelable, Target {
         return thumbnailHeight;
     }
 
-    public void loadThumbnailInto(ImageView imageView) {
-        intoImageView = imageView;
-        if(imageView != null)
-            imageView.setImageResource(android.R.color.transparent);
-        Picasso.with(context).load(thumbnailUrl).fit().into(this);
-    }
-
-    public void cancelLoadThumbnailInto() {
-        intoImageView = null;
+    public String getThumbnailUrl() {
+        return thumbnailUrl;
     }
 
     /**
@@ -62,10 +50,6 @@ public class ImageResult implements Parcelable, Target {
      */
 
     public void onBitmapLoaded(android.graphics.Bitmap bitmap, com.squareup.picasso.Picasso.LoadedFrom loadedFrom) {
-        if(intoImageView != null) {
-            intoImageView.setImageBitmap(bitmap);
-            intoImageView = null;
-        }
     }
 
     public void onBitmapFailed(android.graphics.drawable.Drawable drawable) {
@@ -75,6 +59,7 @@ public class ImageResult implements Parcelable, Target {
     }
 
 
+    // this is for the practice:
     /**
      * @category Parcelable
      */

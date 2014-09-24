@@ -1,7 +1,6 @@
-package com.thomasharte.googleimagesearch;
+package com.thomasharte.googleimagesearch.controller;
 
 import android.app.Activity;
-import android.app.FragmentManager;
 import android.content.Intent;
 import android.net.Uri;
 import android.net.http.HttpResponseCache;
@@ -16,9 +15,11 @@ import android.widget.GridView;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
 
-import com.etsy.android.grid.StaggeredGridView;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
+import com.thomasharte.googleimagesearch.model.ImageRequest;
+import com.thomasharte.googleimagesearch.model.ImageResult;
+import com.thomasharte.googleimagesearch.R;
 
 import org.apache.http.Header;
 import org.json.JSONArray;
@@ -183,7 +184,7 @@ public class SearchActivity extends Activity implements AdvancedSearchSettingsDi
         isFetchingMoreItems = true;
 
         String nextFetchUrl;
-        nextFetchUrl = "https://ajax.googleapis.com/ajax/services/search/images?v=1.0";
+        nextFetchUrl = "https://ajax.googleapis.com/ajax/services/search/images?v=1.0&rsz=8";
         nextFetchUrl += "&start=" + cursorPosition;
         nextFetchUrl += "&q=" + Uri.encode(currentRequest.queryText);
         if (currentRequest.imageColour != 0)

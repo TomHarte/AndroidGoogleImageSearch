@@ -1,6 +1,5 @@
-package com.thomasharte.googleimagesearch;
+package com.thomasharte.googleimagesearch.controller;
 
-import android.app.ActionBar;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
+import com.thomasharte.googleimagesearch.model.ImageResult;
+import com.thomasharte.googleimagesearch.R;
 
 import java.util.List;
 
@@ -61,15 +62,9 @@ public class ImageResultAdaptor extends ArrayAdapter<ImageResult> {
         //  to start most recently.
         ImageResult image = getItem(position);
         if(viewHolder.imageResult != image) {
-            if(viewHolder.imageResult != null) viewHolder.imageResult.cancelLoadThumbnailInto();
-            image.loadThumbnailInto(viewHolder.imgImage);
             viewHolder.imageResult = image;
+            Picasso.with(getContext()).load(image.getThumbnailUrl()).fit().centerInside().into(viewHolder.imgImage);
         }
-
-//        int viewWidth = convertView.getLayoutParams().width;
-//        ViewGroup.LayoutParams layoutParameters = convertView.getLayoutParams();
-//        layoutParameters.width = viewWidth;
-//        layoutParameters.height = viewWidth;
 
         return convertView;
     }

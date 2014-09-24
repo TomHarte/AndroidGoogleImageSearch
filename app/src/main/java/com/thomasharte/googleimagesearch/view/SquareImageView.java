@@ -1,4 +1,4 @@
-package com.thomasharte.googleimagesearch;
+package com.thomasharte.googleimagesearch.view;
 
 import android.content.Context;
 import android.util.AttributeSet;

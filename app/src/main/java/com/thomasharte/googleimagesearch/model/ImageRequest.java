@@ -1,4 +1,4 @@
-package com.thomasharte.googleimagesearch;
+package com.thomasharte.googleimagesearch.model;
 
 import java.io.Serializable;
 import java.util.Objects;
