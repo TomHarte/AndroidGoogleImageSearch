@@ -1,7 +1,6 @@
-package com.thomasharte.googleimagesearch.controller;
+package com.thomasharte.googleimagesearch.fragments;
 
 import android.app.DialogFragment;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -12,7 +11,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.thomasharte.googleimagesearch.model.ImageRequest;
+import com.thomasharte.googleimagesearch.models.ImageRequest;
 import com.thomasharte.googleimagesearch.R;
 
 

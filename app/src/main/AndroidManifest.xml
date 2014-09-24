@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".controller.SearchActivity"
+            android:name=".activities.SearchActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +23,7 @@
                 android:resource="@xml/searchable" />
         </activity>
         <activity
-            android:name=".controller.SingleImageActivity"
+            android:name=".activities.SingleImageActivity"
             android:label="@string/title_activity_single_image" >
         </activity>
     </application>

@@ -1,4 +1,4 @@
-package com.thomasharte.googleimagesearch.controller;
+package com.thomasharte.googleimagesearch.activities;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -7,7 +7,7 @@ import android.text.Html;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
-import com.thomasharte.googleimagesearch.model.ImageResult;
+import com.thomasharte.googleimagesearch.models.ImageResult;
 import com.thomasharte.googleimagesearch.R;
 
 

@@ -1,4 +1,4 @@
-package com.thomasharte.googleimagesearch.controller;
+package com.thomasharte.googleimagesearch.activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -17,8 +17,10 @@ import android.widget.SearchView;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
-import com.thomasharte.googleimagesearch.model.ImageRequest;
-import com.thomasharte.googleimagesearch.model.ImageResult;
+import com.thomasharte.googleimagesearch.adaptors.ImageResultAdaptor;
+import com.thomasharte.googleimagesearch.fragments.AdvancedSearchSettingsDialogue;
+import com.thomasharte.googleimagesearch.models.ImageRequest;
+import com.thomasharte.googleimagesearch.models.ImageResult;
 import com.thomasharte.googleimagesearch.R;
 
 import org.apache.http.Header;
