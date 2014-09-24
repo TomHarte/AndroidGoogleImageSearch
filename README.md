@@ -22,5 +22,5 @@ Time spent: 7 hours
 ![Tap to see image full-screen walkthrough](images/Fullscreen.gif)
 
 # Infinite Scrolling
-![Infinite scrolling walkthrough](images/Scrolling.gif)
+![Infinite scrolling walkthrough](images/InfiniteScrolling.gif)
 
