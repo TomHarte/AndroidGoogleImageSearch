@@ -11,6 +11,7 @@
     <string name="colour_filter">Colour Filter</string>
     <string name="image_type">Image Type</string>
     <string name="site_filter">Site Filter</string>
+    <string name="search_result">Search Result</string>
 
     <string-array name="image_sizes">
         <item>(any)</item>

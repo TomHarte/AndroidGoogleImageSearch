@@ -69,14 +69,21 @@ public class ImageRequest implements Serializable {
         }
     }
 
+    // this essentially implements Object.equals, but that doesn't
+    // become available until API 14
+    private Boolean objectEquals(Object string1, Object string2) {
+        if(string1 == null && string2 == null) return true;
+        if(string1 != null && string2 == null) return false;
+        if(string1 == null && string2 != null) return false;
+        return string1.equals(string2);
+    }
+
     public boolean equals(ImageRequest otherRequest) {
         if(imageColour != otherRequest.imageColour) return false;
         if(imageSize != otherRequest.imageSize) return false;
         if(imageType != otherRequest.imageType) return false;
-        if(!Objects.equals(siteSearch, otherRequest.siteSearch)) return false;
-        if(!Objects.equals(queryText, otherRequest.queryText)) return false;
-
-        return true;
+        if(!objectEquals(siteSearch, otherRequest.siteSearch)) return false;
+        return objectEquals(queryText, otherRequest.queryText);
     }
 
     public ImageRequest(ImageRequest original) {

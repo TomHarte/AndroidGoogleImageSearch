@@ -11,7 +11,9 @@ import com.squareup.picasso.Target;
  * Created by thomasharte on 18/09/2014.
  */
 public class ImageResult implements Parcelable, Target {
-    private String url, title, thumbnailUrl;
+    private final String url;
+    private final String title;
+    private final String thumbnailUrl;
     private int thumbnailWidth, thumbnailHeight;
 
     public ImageResult(Context context, String url, String title, String thumbnailUrl, int thumbnailWidth, int thumbnailHeight) {

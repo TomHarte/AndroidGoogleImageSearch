@@ -176,7 +176,7 @@ public class SearchActivity extends Activity implements AdvancedSearchSettingsDi
     }
 
     private Boolean isFetchingMoreItems = false;
-    private Integer cursorPosition = 0;
+    private int cursorPosition = 0;
     private void considerFetchingMoreItems() {
         final ImageRequest currentRequest = nextRequest;
         if(currentRequest == null) return;

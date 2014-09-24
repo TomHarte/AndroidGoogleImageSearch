@@ -2,7 +2,8 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:focusable="false">
 
     <com.thomasharte.googleimagesearch.views.SquareImageView
         android:layout_width="wrap_content"
@@ -13,6 +14,7 @@
         android:scaleType="fitCenter"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:id="@+id/imgImage"/>
+        android:id="@+id/imgImage"
+        android:focusable="false"/>
 
 </RelativeLayout>

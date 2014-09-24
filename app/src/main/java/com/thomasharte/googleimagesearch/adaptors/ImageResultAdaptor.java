@@ -45,21 +45,7 @@ public class ImageResultAdaptor extends ArrayAdapter<ImageResult> {
             viewHolder = (ViewHolder)convertView.getTag();
         }
 
-
-        // there are two things worth saying here:
-        //
-        //  (i) the image results themselves are responsible for fetching the
-        //  thumbnails, as I'm experimenting with whether it's possible for them
-        //  to build an ahead of
-        //
-        //  (ii) the 'check if a previous, different image result was attached to
-        //  this view and if so then sever that connection' logic corrects for a
-        //  race condition in the most obvious use of Picasso: if a view is reused
-        //  with a previous fetch already set to push into it and if no record of that
-        //  fetch exists such that it can be cancelled then instantiating a new
-        //  fetch means that the view will end up with whichever of those two network
-        //  requests happens to end last. Not necessarily with the one that happened
-        //  to start most recently.
+        // push the image, if necessary
         ImageResult image = getItem(position);
         if(viewHolder.imageResult != image) {
             viewHolder.imageResult = image;
